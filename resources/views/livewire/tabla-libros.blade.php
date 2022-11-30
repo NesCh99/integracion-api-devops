@@ -1,12 +1,12 @@
 <div>
     <select class="form-select" aria-label="Default select example" wire:model="categoria" >
-    <option selected>Selecciona una categoría...</option>
+    <option selected>Selecciona una categoría para cargar libros...</option>
     @foreach($categorias as $cat)
     <option value="{{$cat->nicename}}">{{$cat->name}}</option>
     @endforeach
     </select>
     @if($libros)
-    <table class="table">
+    <table class="table mt-2">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -33,6 +33,6 @@
     </tbody>
     </table>
     @else
-    <p>Por favor, seleccione una categoria</p>
+    <p class="mt-2">Por favor, seleccione una categoria</p>
     @endif
 </div>

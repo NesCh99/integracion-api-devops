@@ -10,6 +10,7 @@
                 <div class="card-header">{{ __('Inicio') }}</div>
 
                 <div class="card-body">
+                    <h3>Lista de Libros</h3>
                     @livewire('tabla-libros')
                 </div>
             </div>
