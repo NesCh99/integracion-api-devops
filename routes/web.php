@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LibroController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::resource('usuarios', UsuarioController::class)->names('usuarios');
+Route::resource('libros', LibroController::class)->names('libros');
+Route::get('libros/{libreriaId}/asignar/{usuarioId}', 'App\Http\Controllers\LibroController@asignar')->name('libros.asignar');
+Route::get('libros/{libreriaId}/quitar/{usuarioId}', 'App\Http\Controllers\LibroController@quitar')->name('libros.quitar');
