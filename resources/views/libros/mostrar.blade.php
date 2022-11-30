@@ -42,7 +42,23 @@
                         <img src="{{$libro[0]->thumbnail}}" class="img-thumbnail">
                         </div>
                     </div>
-                    <h3>Lista de Usuarios Asignados al Libro</h3>
+                    <div class="row">
+                        <div class="col-sm">
+                            <b>Lenguaje</b>
+                        </div>
+                        <div class="col-sm">
+                            <b>Contenido</b>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            {{$libro[0]->language}}
+                        </div>
+                        <div class="col-sm">
+                        {{$libro[0]->content_short}}
+                        </div>
+                    </div>
+                    <h3 class="mt-2">Lista de Usuarios Asignados al Libro</h3>
                     @if(count($usuarios) > 0)
                     <table class="table">
                         <thead>
